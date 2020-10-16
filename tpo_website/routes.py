@@ -15,3 +15,11 @@ def index():
 def dashboard():
     return render_template('/dashboard.html')
 
+@app.route('/company_det')
+def company_det():
+    return render_template('/company_det.html')
+
+@app.route('/comp_indi')
+def comp_indi():
+    return render_template('/comp_indi.html')
+
