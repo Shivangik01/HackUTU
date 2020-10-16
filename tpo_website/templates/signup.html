@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>Detail forms Design in bootstrap - Bootsnipp.com</title>
+    <title>Register</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
@@ -20,73 +20,131 @@
           <tbody>
              <tr>
                 <td colspan="1">
-                   <form class="well form-horizontal">
-                      <fieldset>
+                   <form class="well form-horizontal" role="form" method="POST" action="">
+                    {{ form.hidden_tag() }}  
+                    <fieldset>
                          <div class="form-group">
                             <label class="col-md-4 control-label">College UID</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="fullName" name="fullName" placeholder="College UID" class="form-control" required="true" value="" type="text"></div>
+                               <!--<div class="input-group"><input id="fullName" name="fullName" placeholder="College UID" class="form-control" required="true" value="" type="text"></div>-->
+                               {% if form.uid.errors %}
+                                    {{form.uid(class="form-control is-invalid")}}
+                                    {% for error in form.uid.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}                   
+                                {% else %}
+                                    {{form.uid(class="form-control")}}
+                                {% endif %}
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Student Name</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="addressLine1" name="addressLine1" placeholder="Student Name" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.studentname.errors %}
+                                    {{form.studentname(class="form-control is-invalid")}}
+                                    {% for error in form.studentname.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}                   
+                                {% else %}
+                                    {{form.studentname(class="form-control")}}
+                                {% endif %}
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Branch</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span><input id="addressLine2" name="addressLine2" placeholder="Branch" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.branch.errors %}
+                                {{form.branch(class="form-control is-invalid")}}
+                                {% for error in form.branch.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.branch(class="form-control")}}
+                            {% endif %}
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Year</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="city" placeholder="Year" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.year.errors %}
+                                {{form.year(class="form-control is-invalid")}}
+                                {% for error in form.year.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.year(class="form-control")}}
+                            {% endif %}
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Email Address</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span><input id="state" name="state" placeholder="Email Address" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.email.errors %}
+                                {{form.email(class="form-control is-invalid")}}
+                                {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.email(class="form-control")}}
+                            {% endif %}
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Password</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="fa fa-unlock"></i></span><input id="postcode" name="postcode" placeholder="Password" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.password.errors %}
+                                {{form.password(class="form-control is-invalid")}}
+                                {% for error in form.password.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.password(class="form-control")}}
+                            {% endif %}
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Confirm Password</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group">
-                            
-                                  <div class="input-group"><span class="input-group-addon"><i class="fa fa-unlock"></i></span><input id="email" name="email" placeholder="Confirm Password" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.confirmpassword.errors %}
+                                {{form.confirmpassword(class="form-control is-invalid")}}
+                                {% for error in form.confirmpassword.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.confirmpassword(class="form-control")}}
+                            {% endif %}
                                </div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Address</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span><input id="email" name="email" placeholder="Address" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.homeaddress.errors %}
+                                {{form.homeaddress(class="form-control is-invalid")}}
+                                {% for error in form.homeaddress.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.homeaddress(class="form-control")}}
+                            {% endif %}
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Phone Number</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" name="phoneNumber" placeholder="Phone Number" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.mobile.errors %}
+                                {{form.mobile(class="form-control is-invalid")}}
+                                {% for error in form.mobile.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.mobile(class="form-control")}}
+                            {% endif %}
                             </div>
                          </div>
-                         <div class="form-group">
-                            
-                            <div class="col-md-4 control-label">
-                                <button type="button" class="btn btn-primary btn-lg">SUBMIT </button>
-                            </div>
-                         </div>
+                       
                       </fieldset>
-                   </form>
                 </td>
                 <td colspan="1">
                    <form class="well form-horizontal">
@@ -94,61 +152,124 @@
                          <div class="form-group">
                             <label class="col-md-4 control-label">10th Marks</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span><input id="fullName" name="fullName" placeholder="10th Marks" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.secondarymarks.errors %}
+                                {{form.secondarymarks(class="form-control is-invalid")}}
+                                {% for error in form.secondarymarks.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.secondarymarks(class="form-control")}}
+                            {% endif %}
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">12th Marks</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span><input id="addressLine1" name="addressLine1" placeholder="12th Marks" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.juniorcollegemarks.errors %}
+                                {{form.juniorcollegemarks(class="form-control is-invalid")}}
+                                {% for error in form.juniorcollegemarks.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.juniorcollegemarks(class="form-control")}}
+                            {% endif %}
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">SEM I CGPA</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span><input id="addressLine2" name="addressLine2" placeholder="SEM I CGPA" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.sem1.errors %}
+                                {{form.sem1(class="form-control is-invalid")}}
+                                {% for error in form.sem1.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.sem1(class="form-control")}}
+                            {% endif %}
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">SEM II CGPA</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span><input id="city" name="city" placeholder="SEM II CGPA" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.sem2.errors %}
+                                {{form.sem2(class="form-control is-invalid")}}
+                                {% for error in form.sem2.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.sem2(class="form-control")}}
+                            {% endif %}
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">SEM III CGPA</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span><input id="state" name="state" placeholder="SEM III CGPA" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.sem3.errors %}
+                                {{form.sem3(class="form-control is-invalid")}}
+                                {% for error in form.sem3.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.sem3(class="form-control")}}
+                            {% endif %}
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">SEM IV CGPA</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span><input id="postcode" name="postcode" placeholder="SEM IV CGPA" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.sem4.errors %}
+                                {{form.sem4(class="form-control is-invalid")}}
+                                {% for error in form.sem4.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.sem4(class="form-control")}}
+                            {% endif %}
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">SEM V CGPA</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group">
-                                 
-                                  <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span><input id="postcode" name="postcode" placeholder="SEM V CGPA" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.sem5.errors %}
+                                {{form.sem5(class="form-control is-invalid")}}
+                                {% for error in form.sem5.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.sem5(class="form-control")}}
+                            {% endif %}
                                </div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">SEM VI CGPA</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span><input id="email" name="email" placeholder="SEM VI CGPA" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.sem6.errors %}
+                                {{form.sem6(class="form-control is-invalid")}}
+                                {% for error in form.sem6.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.sem6(class="form-control")}}
+                            {% endif %}
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Backlogs(if any)</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span><input id="phoneNumber" name="phoneNumber" placeholder="Number of Backlogs(if any)" class="form-control" required="true" value="" type="text"></div>
+                                {% if form.backlogs.errors %}
+                                {{form.backlogs(class="form-control is-invalid")}}
+                                {% for error in form.backlogs.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}                   
+                            {% else %}
+                                {{form.backlogs(class="form-control")}}
+                            {% endif %}
                             </div>
                          </div>
                       </fieldset>
+                      {{form.submit(class="btn btn-default")}}
                    </form>
                 </td>
              </tr>
