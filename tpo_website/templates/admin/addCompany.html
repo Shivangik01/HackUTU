@@ -106,13 +106,14 @@
 				            {% else %}
 
 				            {{form.position(class="form-control")}}
-				            {% endif %}
+							{% endif %}
+
 				          </div><br /><br />
 				          <div class="form-group">
 				          	<textarea class="form-control" name="Details" rows="3">Enter company details</textarea>
 				          	
 				          </div>
-						
+						  {{form.submit(class="btn btn-primary")}}
 					</form>
 				</div>
 				

@@ -22,12 +22,13 @@ class User(db.Model, UserMixin):
     sem4=db.Column(db.String(2), nullable=True)
     sem5=db.Column(db.String(2), nullable=True)
     sem6=db.Column(db.String(2), nullable=True)
-    #sem7=db.Column(db.Numeric(2,2), nullable=False)
-    #sem8=db.Column(db.Numeric(2,2), nullable=False)
+#    sem7=db.Column(db.String(2), nullable=True)
+#    sem8=db.Column(db.String(2), nullable=True)
+    status=db.Column(db.String(1),nullable=False ,default='S')
     backlogs=db.Column(db.Integer, nullable=False)
     email = db.Column(db.String(20), unique=True, nullable=False)
     mobile = db.Column(db.Integer, unique=True, nullable=False)
     password = db.Column(db.String(20), nullable=False)
 
     def __repr__(self):
-        return f"User('{self.username}' , '{self.email}', '{self.mobile}')"
+        return f"User('{self.studentname}' , '{self.email}', '{self.mobile}')"

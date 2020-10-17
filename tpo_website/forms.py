@@ -10,9 +10,9 @@ class RegistrationForm(FlaskForm):
     branch=StringField('Branch',validators=[DataRequired(),Length(min=2, max=20)],render_kw={"placeholder":"Branch"})
     year=StringField('Year',validators=[DataRequired(),Length(min=2, max=10)],render_kw={"placeholder":"Year"})
     homeaddress=StringField('Address',validators=[DataRequired(),Length(min=2, max=70)],render_kw={"placeholder":"Address"})
-    secondaryboard=StringField('10th Board',validators=[DataRequired(),Length(min=2, max=20)],render_kw={"placeholder":"10th Board"})
+    #secondaryboard=StringField('10th Board',validators=[DataRequired(),Length(min=2, max=20)],render_kw={"placeholder":"10th Board"})
     secondarymarks=StringField('10th Marks',validators=[DataRequired(),Length(min=2, max=10)],render_kw={"placeholder":"10th Marks"})
-    juniorcollegeboard=StringField('12th Board',validators=[DataRequired(),Length(min=2, max=20)],render_kw={"placeholder":"12th Board"})
+    #juniorcollegeboard=StringField('12th Board',validators=[DataRequired(),Length(min=2, max=20)],render_kw={"placeholder":"12th Board"})
     juniorcollegemarks=StringField('12th Marks',validators=[DataRequired(),Length(min=2, max=10)],render_kw={"placeholder":"12th Marks"})
     sem1=StringField('SEM I',validators=[DataRequired(),Length(min=2, max=3)],render_kw={"placeholder":"SEM I CGPA"})
     sem2=StringField('SEM II',validators=[DataRequired(),Length(min=2, max=3)],render_kw={"placeholder":"SEM II CGPA"})
@@ -39,12 +39,18 @@ class RegistrationForm(FlaskForm):
             raise ValidationError(
                 'That email is taken. Please choose a different one.')
 
+class LoginForm(FlaskForm):
+    uid = StringField('UID', validators=[DataRequired()],render_kw={"placeholder":"UID"})
+    password = PasswordField('Password', validators=[DataRequired()],render_kw={"placeholder":"Password"})
+    remember = BooleanField('Remember Me')
+    submit = SubmitField('SIGN IN')
+
 class CompanyDetailsForm(FlaskForm): 
     company_name = StringField('Company Name',validators=[DataRequired(),Length(min=1, max=20)],render_kw={"placeholder":"Company Name"})
     company_type = StringField('Company Type',validators=[DataRequired(),Length(min=1, max=20)],render_kw={"placeholder":"Company Type"})
     company_category = StringField('Company Category',validators=[DataRequired(),Length(min=1, max=20)],render_kw={"placeholder":"Company Category"})
     position = StringField('Position Offered',validators=[DataRequired(),Length(min=1, max=20)],render_kw={"placeholder":"Position Offered"})
     details = StringField('Company details',validators=[DataRequired(),Length(min=1, max=20)],render_kw={"placeholder":"Company details"})
-
+    submit = SubmitField('SUBMIT')
 
 
