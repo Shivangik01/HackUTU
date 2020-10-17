@@ -21,14 +21,14 @@
         text-align: center;
       }
       .profile-img img {
-        width: 70%;
-        height: 100%;
+        width: 50%;
+        height: 50%;
       }
       .profile-img .file {
         position: relative;
         overflow: hidden;
         margin-top: -20%;
-        width: 70%;
+        width: 50%;
         border: none;
         border-radius: 0;
         font-size: 15px;
@@ -190,8 +190,8 @@
           </div>
           <div class="col-md-6">
             <div class="profile-head">
-              <h5>Rishita Mote</h5>
-              <h6>Student</h6>
+              <h3>{{current_user.studentname}}</h3>
+              <h5>Student</h5>
               <br /><br />
               <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
@@ -215,7 +215,7 @@
                     role="tab"
                     aria-controls="profile"
                     aria-selected="false"
-                    >Timeline</a
+                    >Education</a
                   >
                 </li>
               </ul>
@@ -253,28 +253,29 @@
                 role="tabpanel"
                 aria-labelledby="home-tab"
               >
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Name</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{current_user.studentname}}</p>
+                </div>
+              </div>
                 <div class="row">
                   <div class="col-md-6">
-                    <label>User Id</label>
+                    <label>UID</label>
                   </div>
                   <div class="col-md-6">
-                    <p>Rishita</p>
+                    <p>{{current_user.uid}}</p>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>Name</label>
-                  </div>
-                  <div class="col-md-6">
-                    <p>Rishita Mote</p>
-                  </div>
-                </div>
+                
                 <div class="row">
                   <div class="col-md-6">
                     <label>Email</label>
                   </div>
                   <div class="col-md-6">
-                    <p>rishita@gmail.com</p>
+                    <p>{{current_user.email}}</p>
                   </div>
                 </div>
                 <div class="row">
@@ -282,15 +283,31 @@
                     <label>Phone</label>
                   </div>
                   <div class="col-md-6">
-                    <p>1234567890</p>
+                    <p>{{current_user.mobile}}</p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-6">
-                    <label>Profession</label>
+                    <label>Branch</label>
                   </div>
                   <div class="col-md-6">
-                    <p>Student</p>
+                    <p>{{current_user.branch}}</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Year</label>
+                  </div>
+                  <div class="col-md-6">
+                    <p>{{current_user.year}}</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Home Address</label>
+                  </div>
+                  <div class="col-md-6">
+                    <p>{{current_user.homeaddress}}</p>
                   </div>
                 </div>
               </div>
@@ -300,46 +317,102 @@
                 role="tabpanel"
                 aria-labelledby="profile-tab"
               >
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>Experience</label>
-                  </div>
-                  <div class="col-md-6">
-                    <p>Beginner</p>
-                  </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Secondary Board</label>
                 </div>
-                <div class="row">
-                  <!-- <div class="col-md-6">
-                    <label>Hourly Rate</label>
-                  </div> -->
-                  <!-- <div class="col-md-6">
-                    <p>10$/hr</p>
-                  </div> -->
+                <div class="col-md-6">
+                  <p>{{current_user.secondaryboard}}</p>
                 </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>Total Projects</label>
-                  </div>
-                  <div class="col-md-6">
-                    <p>5</p>
-                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Secondary Marks</label>
                 </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>English Level</label>
-                  </div>
-                  <div class="col-md-6">
-                    <p>Good Working Proficiency</p>
-                  </div>
+                <div class="col-md-6">
+                  <p>{{current_user.secondarymarks}}</p>
                 </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>Availability</label>
-                  </div>
-                  <div class="col-md-6">
-                    <p>6 months</p>
-                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Junior College Board</label>
                 </div>
+                <div class="col-md-6">
+                  <p>{{current_user.juniorcollegeboard}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Junior College Marks</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{current_user.juniorcollegemarks}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Sem 1 Marks</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{current_user.sem1}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Sem 2 Marks</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{current_user.sem2}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Sem 3 Marks</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{current_user.sem3}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Sem 4 Marks</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{current_user.sem4}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Sem 5 Marks</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{current_user.sem5}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Sem 6 Marks</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{current_user.sem6}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Sem 7 Marks</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{current_user.sem7}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Sem 8 Marks</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{current_user.sem8}}</p>
+                </div>
+              </div>
                 <div class="row">
                   <div class="col-md-12">
                     <label>Your Bio</label><br />

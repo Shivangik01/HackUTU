@@ -47,7 +47,7 @@
             <a class="nav-link" href="#">Notifications</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Calendar</a>
+            <a class="nav-link" href="/calendar">Calendar</a>
           </li>
         </ul>
         <div class="nav-item float-right">
@@ -69,7 +69,7 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
-            Rishita
+            {{current_user.studentname}}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/student_profile">Profile</a>
@@ -93,7 +93,7 @@
           <p><a href="#">My Resumes</a></p>
           <hr />
           <p><a href="#">Upcoming Events</a></p>
-          <p class="active"><a href="#">Company details</a></p>
+          <p><a href="/company_det">Company details</a></p>
           <p><a href="#">Interview Experiences</a></p>
           <p><a href="#">Resources</a></p>
         </div>

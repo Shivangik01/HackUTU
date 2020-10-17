@@ -31,9 +31,15 @@ def index():
                   'danger')
     return render_template('/index.html',title='TPO Login Form', form=form)
 
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
 @app.route('/dashboard', methods=['GET', 'POST'])
+@login_required
 def dashboard():
-    return render_template('/dashboard.html',title='Dashboard')
+    return render_template('/student/dashboard.html')
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -58,7 +64,6 @@ def signup():
         homeaddress=form.homeaddress.data,
         branch=form.branch.data,
         year=form.year.data,
-        status='S',
         password=hashed_password)
         db.session.add(user)
         db.session.commit()
@@ -69,19 +74,27 @@ def signup():
 
 @app.route('/company_det')
 def company_det():
-    return render_template('/company_det.html')
+    return render_template('/student/company_det.html')
 
 @app.route('/comp_indi')
 def comp_indi():
-    return render_template('/comp_indi.html')
+    return render_template('/student/comp_indi.html')
 
 @app.route('/student_profile')
 def student_profile():
-    return render_template('/student_profile.html')
+    return render_template('/student/student_profile.html')
 
 @app.route("/comp_indi/watch",methods=['GET', 'POST'])
 @login_required
 def emailnotify():
     
-    
     return redirect(url_for('company_det'))
+
+@app.route('/calendar')
+def calendar():
+    return render_template('/student/calendar.html')
+
+@app.route('/addCompany')
+def add_company():
+    form= CompanyDetailsForm()
+    return render_template('/admin/addCompany.html',title='Company Form', form=form)

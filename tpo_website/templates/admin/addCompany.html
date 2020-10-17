@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin </title>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+  <style type="text/css">
+  	.container
+  	{
+  		margin-top: 40px;
+  		padding-top: 50px;
+      	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      	border-radius: 15px;
+  	}
+  	h2
+  	{
+  		font-weight: bolder;
+  		text-align: center;
+  	}
+  	 .col-padding {
+        padding: 0 15px;
+    }
+  </style>
+</head>
+<body>
+	<div class="container">
+		<h2> Add Company Details </h2><br/><br/>
+		<div class="row">
+			<div class="col-md-6" >
+				<div class="col-padding">
+					<img src="https://www.pngkey.com/png/detail/772-7725708_office-administrator-virtual-assistant-vector-png.png" width= "100%" height="450px">
+					
+				</div>
+				
+			</div>
+			<div class="col-md-6">
+				<div class="col-padding"><br/><br/>
+					<form role="form" method="POST" action="">
+
+						{{ form.hidden_tag() }}
+				          <div class="form-group">
+				            {{form.company_name.label(class="form-control-label")}}
+				            {% if form.company_name.errors %}
+				            {{form.company_name(class="form-control is-invalid")}}
+				            <div class="invalid-feedback">
+				              {% for error in form.company_name.errors %}
+				              <span>{{ error }}</span>
+				              {% endfor %}
+
+				            </div>
+				            {% else %}
+
+				            {{form.company_name(class="form-control")}}
+				            {% endif %}
+				          </div><br /><br />
+				          <div class="form-group">
+				            {{form.company_type.label(class="form-control-label")}}
+				            {% if form.company_type.errors %}
+				            {{form.company_type(class="form-control is-invalid")}}
+				            <div class="invalid-feedback">
+				              {% for error in form.company_type.errors %}
+				              <span>{{ error }}</span>
+				              {% endfor %}
+
+				            </div>
+				            {% else %}
+
+				            {{form.company_type(class="form-control")}}
+				            {% endif %}
+				          </div><br /><br />
+				          <div class="form-group">
+				            {{form.company_category.label(class="form-control-label")}}
+				            {% if form.company_category.errors %}
+				            {{form.company_category(class="form-control is-invalid")}}
+				            <div class="invalid-feedback">
+				              {% for error in form.company_category.errors %}
+				              <span>{{ error }}</span>
+				              {% endfor %}
+
+				            </div>
+				            {% else %}
+
+				            {{form.company_category(class="form-control")}}
+				            {% endif %}
+				          </div><br /><br />
+				          <div class="form-group">
+				            {{form.position.label(class="form-control-label")}}
+				            {% if form.position.errors %}
+				            {{form.position(class="form-control is-invalid")}}
+				            <div class="invalid-feedback">
+				              {% for error in form.position.errors %}
+				              <span>{{ error }}</span>
+				              {% endfor %}
+
+				            </div>
+				            {% else %}
+
+				            {{form.position(class="form-control")}}
+							{% endif %}
+
+				          </div><br /><br />
+				          <div class="form-group">
+				          	<textarea class="form-control" name="Details" rows="3">Enter company details</textarea>
+				          	
+				          </div>
+						  {{form.submit(class="btn btn-primary")}}
+					</form>
+				</div>
+				
+			</div>
+		</div>
+		<br/><br/><br/>
+
+		
+	</div>
+
+</body>
+</html>
