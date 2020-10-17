@@ -52,3 +52,7 @@ def company_det():
 @app.route('/comp_indi')
 def comp_indi():
     return render_template('/comp_indi.html')
+
+@app.route('/student_profile')
+def student_profile():
+    return render_template('/student_profile.html')
