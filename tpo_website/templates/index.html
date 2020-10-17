@@ -27,14 +27,23 @@
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="POST">
-                   
+                <form id="sign_in" action="" role="form" method="POST">
+                    {{ form.hidden_tag() }}
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
+                            {% if form.uid.errors %}
+                            {{form.uid(class="form-control is-invalid")}}
+                            <div class="invalid-feedback">
+                            {% for error in form.uid.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                            </div>
+                            {% else %}
+                            {{form.uid(class="form-control")}}
+                            {% endif %}
                         </div>
                     </div>
                     <div class="input-group">
@@ -42,7 +51,16 @@
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                            {% if form.password.errors %}
+                            {{form.password(class="form-control is-invalid")}}
+                            <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                            </div>
+                            {% else %}
+                            {{form.password(class="form-control")}}
+                            {% endif %}
                         </div>
                     </div>
                     <div class="row">
@@ -51,7 +69,7 @@
                             <label for="rememberme">Remember Me</label>
                         </div>
                         <div class="col-xs-4">
-                            <button class="btn btn-block bg-pink waves-effect" type="submit">SIGN IN</button>
+                             {{form.submit(class="btn btn-block bg-pink waves-effect")}}
                         </div>
                     </div>
                     <div class="row m-t-15 m-b--20">
