@@ -8,12 +8,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Admin Dashboard</title>
   </head>
   <body>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand " href="/dashboard">Portal for TPO</a>
+        <a class="navbar-brand " href="#">Portal for TPO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,24 +30,19 @@
                 <a class="nav-link" href="#">Notifications</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/calendar">Calendar</a>
+                <a class="nav-link" href="#">Calendar</a>
               </li>       
           </ul>
-          <div class="nav-item float-right">
-            <img class="rounded-circle" src="../static/images/user.png" width="48" height="48" alt="User" />
-          </div>
-          <div class="nav-link" style="color: white;">
-            {{current_user.studentname}}
-          </div>
           <div class="nav-item dropdown float-right mr-5">
-            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {Name}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/student_profile">Profile</a>
+              <a class="dropdown-item" href="#">Profile</a>
               <a class="dropdown-item" href="#">Change Password</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Help</a>
-              <a class="dropdown-item" href="/logout">Log Out</a>
+              <a class="dropdown-item" href="#">Log Out</a>
             </div>
         </div>
           <!-- <form class="form-inline my-2 my-lg-0">
@@ -59,14 +54,14 @@
       <div class="container text-center mt-5">    
         <div class="row content">
           <div class="col-sm-2">
-            <p><a href="#">My Applications</a></p>
+            <p><a href="#">View Students</a></p>
             <p><a href="#">My Offers</a></p>
-            <p><a href="#">My Resumes</a></p>
+            <p><a href="#"></a></p>
             <hr/>
             <p><a href="#">Upcoming Events</a></p>
-            <p><a href="/company_det">Company details</a></p>
+            <p><a href="/addCompany">Company details</a></p>
             <p><a href="#">Interview Experiences</a></p>
-            <p><a href="#">Resources</a></p>
+            <p><a href="/addResources">Resources</a></p>
             
           </div>
           <div class="col-sm-10 text-left"> 

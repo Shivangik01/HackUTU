@@ -25,7 +25,7 @@ def index():
             login_user(user, remember=form.remember.data)
             flash(f'You have successfully logged in!',
               'success')
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('admindashboard'))
         else:
             flash('Login Unsuccessful. Please check email and password',
                   'danger')
@@ -37,7 +37,6 @@ def logout():
     return redirect(url_for('index'))
 
 @app.route('/dashboard', methods=['GET', 'POST'])
-@login_required
 def dashboard():
     return render_template('/student/dashboard.html')
 
@@ -94,7 +93,15 @@ def emailnotify():
 def calendar():
     return render_template('/student/calendar.html')
 
+@app.route('/admindashboard')
+def admin_dashboard():
+    return render_template('/admin/admin_dashboard.html')
+
 @app.route('/addCompany')
 def add_company():
     form= CompanyDetailsForm()
     return render_template('/admin/addCompany.html',title='Company Form', form=form)
+
+@app.route('/addResources')
+def addResources():
+    return render_template('/admin/admin_resources.html')

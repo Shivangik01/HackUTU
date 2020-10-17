@@ -68,15 +68,17 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-          >
+          > 
+          <div class="nav-link" style="color: white;">
             {{current_user.studentname}}
+          </div>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/student_profile">Profile</a>
             <a class="dropdown-item" href="#">Change Password</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Help</a>
-            <a class="dropdown-item" href="#">Log Out</a>
+            <a class="dropdown-item" href="/logout">Log Out</a>
           </div>
         </div>
         <!-- <form class="form-inline my-2 my-lg-0">
