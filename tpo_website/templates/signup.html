@@ -20,7 +20,7 @@
           <tbody>
              <tr>
                 <td colspan="1">
-                   <form class="well form-horizontal" role="form" method="POST" action="">
+                   <form class="well form-horizontal" role="form" method="POST" action="/dashboard">
                     {{ form.hidden_tag() }}  
                     <fieldset>
                          <div class="form-group">
@@ -269,7 +269,8 @@
                             </div>
                          </div>
                       </fieldset>
-                      {{form.submit(class="btn btn-default")}}
+                      <!-- {{form.submit(class="btn btn-default")}} -->
+                      <input class="btn btn-primary" type="submit" value="Submit">
                    </form>
                 </td>
              </tr>
