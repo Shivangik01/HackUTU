@@ -27,7 +27,7 @@ def index():
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
-    return render_template('/dashboard.html')
+    return render_template('/student/dashboard.html')
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -62,16 +62,16 @@ def signup():
 
 @app.route('/company_det')
 def company_det():
-    return render_template('/company_det.html')
+    return render_template('/student/company_det.html')
 
 @app.route('/comp_indi')
 def comp_indi():
-    return render_template('/comp_indi.html')
+    return render_template('/student/comp_indi.html')
 
 @app.route('/student_profile')
 def student_profile():
-    return render_template('/student_profile.html')
+    return render_template('/student/student_profile.html')
 
 @app.route('/calendar')
 def calendar():
-    return render_template('/calendar.html')
+    return render_template('/student/calendar.html')
