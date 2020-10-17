@@ -16,7 +16,106 @@
       crossorigin="anonymous"
     />
 
-    <title>Portal for TPO</title>
+    <title>Hello, world!</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      ul {
+        list-style-type: none;
+      }
+      body {
+        font-family: Verdana, sans-serif;
+      }
+
+      .month {
+        padding: 70px 25px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .month ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      .month ul li {
+        color: white;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+
+      .month .prev {
+        float: left;
+        padding-top: 10px;
+      }
+
+      .month .next {
+        float: right;
+        padding-top: 10px;
+      }
+
+      .weekdays {
+        margin: 0;
+        padding: 10px 0;
+        background-color: #ddd;
+      }
+
+      .weekdays li {
+        display: inline-block;
+        width: 13.6%;
+        color: #666;
+        text-align: center;
+      }
+
+      .days {
+        padding: 10px 0;
+        background: #eee;
+        margin: 0;
+      }
+
+      .days li {
+        list-style-type: none;
+        display: inline-block;
+        width: 13.6%;
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: 12px;
+        color: #777;
+      }
+
+      .days li .active {
+        padding: 5px;
+        background: #007BFF;
+        color: white !important;
+      }
+
+      /* Add media queries for smaller screens */
+      @media screen and (max-width: 720px) {
+        .weekdays li,
+        .days li {
+          width: 13.1%;
+        }
+      }
+
+      @media screen and (max-width: 420px) {
+        .weekdays li,
+        .days li {
+          width: 12.5%;
+        }
+        .days li .active {
+          padding: 2px;
+        }
+      }
+
+      @media screen and (max-width: 290px) {
+        .weekdays li,
+        .days li {
+          width: 12.2%;
+        }
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -35,7 +134,7 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="#"
               >News Feed <span class="sr-only">(current)</span></a
             >
@@ -87,7 +186,7 @@
     </nav>
     <div class="container text-center mt-5">
       <div class="row content">
-        <div class="col-sm-2 mr-5">
+        <div class="col-sm-2">
           <p><a href="#">My Applications</a></p>
           <p><a href="#">My Offers</a></p>
           <p><a href="#">My Resumes</a></p>
@@ -97,66 +196,63 @@
           <p><a href="#">Interview Experiences</a></p>
           <p><a href="#">Resources</a></p>
         </div>
-        <div class="col-sm-9 text-left">
-          <h1>Credit Suisse</h1>
-          <br />
-          <p>
-            Credit Suisse is one of the world s leading banks, with more than
-            45,000 employees, offices in 50 countries and expertise in nearly
-            every facet of banking, investing and finance. As we look towards
-            the future, we have made strategic changes to better serve our
-            clients. We are also focused on making inroads into new markets and
-            ensuring the continued success of our company and our people.
-            Through it all, we have created an environment aimed at ensuring
-            that you can flourish. No matter where you are in your career, now
-            is a great time to become part of Credit Suisse. We offer
-            opportunities to make meaningful contributions to the firm, and
-            reach new milestones in your career.
-          </p>
-          <h5>Company Type</h5>
-          <p>FinTech</p>
-          <h5>Category</h5>
-          <p>Super Dream</p>
-          <h5>Positions usually offered</h5>
-          <p>Software Developer</p>
+        <div class="col-sm-10 text-left">
+          <h1>Calendar</h1>
 
-          <h5>Students Placed</h5>
-          <table class="table table-hover mt-5">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Student Name</th>
-                <th scope="col">Job Type</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Sumit</td>
-                <td>I</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Shruti</td>
-                <td>I+P</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Preeti</td>
-                <td>P</td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Vidya</td>
-                <td>P</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Ronit</td>
-                <td>I+P</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="month bg-dark mt-5">
+            <ul>
+              <li class="prev">&#10094;</li>
+              <li class="next">&#10095;</li>
+              <li>
+                October<br />
+                <span style="font-size: 18px">2020</span>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="weekdays">
+            <li>Mo</li>
+            <li>Tu</li>
+            <li>We</li>
+            <li>Th</li>
+            <li>Fr</li>
+            <li>Sa</li>
+            <li>Su</li>
+          </ul>
+
+          <ul class="days">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li><span class="active">10</span></li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+            <li>31</li>
+          </ul>
         </div>
       </div>
     </div>

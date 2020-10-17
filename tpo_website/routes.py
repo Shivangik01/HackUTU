@@ -71,3 +71,7 @@ def comp_indi():
 @app.route('/student_profile')
 def student_profile():
     return render_template('/student_profile.html')
+
+@app.route('/calendar')
+def calendar():
+    return render_template('/calendar.html')
