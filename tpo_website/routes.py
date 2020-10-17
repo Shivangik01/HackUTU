@@ -15,7 +15,13 @@ def index():
     if form.validate_on_submit():
         user = User.query.filter_by(uid=form.uid.data).first()
         if user and bcrypt.check_password_hash(user.password,
-                                               form.password.data):
+                                               form.password.data) and user.status=='S' :
+            login_user(user, remember=form.remember.data)
+            flash(f'You have successfully logged in!',
+              'success')
+            return redirect(url_for('dashboard'))
+        elif user and bcrypt.check_password_hash(user.password,
+                                               form.password.data) and user.status=='A' :
             login_user(user, remember=form.remember.data)
             flash(f'You have successfully logged in!',
               'success')
@@ -27,7 +33,7 @@ def index():
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
-    return render_template('/dashboard.html')
+    return render_template('/dashboard.html',title='Dashboard')
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -52,6 +58,7 @@ def signup():
         homeaddress=form.homeaddress.data,
         branch=form.branch.data,
         year=form.year.data,
+        status='S',
         password=hashed_password)
         db.session.add(user)
         db.session.commit()
@@ -71,3 +78,10 @@ def comp_indi():
 @app.route('/student_profile')
 def student_profile():
     return render_template('/student_profile.html')
+
+@app.route("/comp_indi/watch",methods=['GET', 'POST'])
+@login_required
+def emailnotify():
+    
+    
+    return redirect(url_for('company_det'))
