@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Portal for TPO</title>
   </head>
   <body>
     
@@ -20,7 +20,7 @@
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="#">News Feed <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -38,7 +38,7 @@
           </div>
           <div class="nav-item dropdown float-right mr-5">
             <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{current_user.studentname}}
+              Rishita
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="/student_profile">Profile</a>
@@ -56,23 +56,67 @@
       </nav>
       <div class="container text-center mt-5">    
         <div class="row content">
-          <div class="col-sm-2">
+          <div class="col-sm-2 mr-5">
             <p><a href="#">My Applications</a></p>
             <p><a href="#">My Offers</a></p>
             <p><a href="#">My Resumes</a></p>
             <hr/>
             <p><a href="#">Upcoming Events</a></p>
-            <p><a href="/company_det">Company details</a></p>
+            <p class="active"><a href="#">Company details</a></p>
             <p><a href="#">Interview Experiences</a></p>
             <p><a href="#">Resources</a></p>
             
           </div>
-          <div class="col-sm-10 text-left"> 
-            <h1>Welcome</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <hr>
-            <h3>Test</h3>
-            <p>Lorem ipsum...</p>
+          <div class="col-sm-9 text-left"> 
+            <h1>Company Details</h1>
+            <br>
+            <p>The following companies have participated in our college's campus placements.</p>
+            <h5>Company Types</h5>
+            <p>Consultancy, Core, Finance, FinTech, Product, Tech</p>
+            <h5>Category</h5>
+            <p>Elite, Super dream, Dream, Normal</p>
+            <table class="table table-hover mt-5">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Company Name</th>
+                    <th scope="col">Company Type</th>
+                    <th scope="col">Category</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td><a href="/comp_indi" class="text-dark">Credit Suisse</a></td>
+                    <td>FinTech</td>
+                    <td>Super Dream</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td><a href="" class="text-dark">LnT</a></td>
+                    <td>Core</td>
+                    <td>Dream</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td><a href="" class="text-dark">Microsoft</a></td>
+                    <td>Tech</td>
+                    <td>Elite</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td><a href="" class="text-dark">JPMC</a></td>
+                    <td>FinTech</td>
+                    <td>Super Dream</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td><a href="" class="text-dark">Fractal</a></td>
+                    <td>Tech</td>
+                    <td>Normal</td>
+                  </tr>
+                </tbody>
+              </table>
           </div>
           
         </div>
